@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\GiftCertificatePurchased;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    event(new GiftCertificatePurchased());
+
     return view('welcome');
 });
